@@ -137,6 +137,7 @@ MonoBehaviour:
   keyCode: 32
   bulletSpeed: 50
   isShotgun: 0
+  isMagnet: 1
 --- !u!114 &114000013237093598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,6 +152,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   maxSpeed: 10
   force: 10
+  dustEffect: []
   key: 261
 --- !u!212 &212000010778662338
 SpriteRenderer:

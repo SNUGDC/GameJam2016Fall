@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
             Player player = players[i];
             GameObject tankObject = Instantiate(Tank.tankEnumToPrefab(player.tankenum), startingPoints[i].position, startingPoints[i].rotation) as GameObject;
             Tank tank = tankObject.GetComponent<Tank>();
+            tank.GetComponent<SpriteRenderer>().color = player.color;
             player.init(tank);
         }
 
