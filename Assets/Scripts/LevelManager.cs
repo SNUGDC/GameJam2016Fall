@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
             players = new List<Player>()
             {
                 new Player(KeyCode.A, TankEnum.S89, new Color(1f,1f,1f,1f)),
-                new Player(KeyCode.S, TankEnum.Centurion, new Color(1f,1f,1f,1f))
+                new Player(KeyCode.S, TankEnum.KV2, new Color(1f,1f,1f,1f))
             };
         }
 

@@ -14,6 +14,7 @@ public class Tank : MonoBehaviour
     public float maxSpeed;
     public float force; // This parameter controls both speed and rotation
     public List<ParticleSystem> dustEffect;
+    public float width = 2f;
 
     private float maxAngularVelocity = 360; // Probably don't need to be public?
     private float rotationDirection = 1; // -1 or 1 // rotating clockwise or counterclockwise
@@ -38,11 +39,11 @@ public class Tank : MonoBehaviour
 
     void FixedUpdate() {
         // Handle both rotation and acceleration by adding force at transform.right
-        rigidbody.AddForceAtPosition(transform.up * force * roadCondition, transform.position + transform.right*2 * rotationDirection);
+        rigidbody.AddForceAtPosition(transform.up * force * roadCondition, transform.position + transform.right*width * rotationDirection);
 
         // Set max speed and angular speed to prevent quantum leap.
-        rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, maxSpeed);
-        rigidbody.angularVelocity = Mathf.Clamp(rigidbody.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
+        // rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, maxSpeed);
+        // rigidbody.angularVelocity = Mathf.Clamp(rigidbody.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
     }
 
     public static GameObject tankEnumToPrefab(TankEnum tankEnum) {

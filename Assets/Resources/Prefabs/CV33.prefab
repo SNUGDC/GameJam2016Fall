@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013276870646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.5, y: 28.8, z: 0}
+  m_LocalPosition: {x: 11.04, y: 29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -182,7 +182,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &61000011098019816
 BoxCollider2D:
@@ -215,6 +215,7 @@ MonoBehaviour:
   dustEffect:
   - {fileID: 198000012012101454}
   - {fileID: 198000012905027860}
+  width: 1.4
   key: 258
 --- !u!114 &114000011839038622
 MonoBehaviour:
@@ -237,6 +238,7 @@ MonoBehaviour:
   keyCode: 9
   bulletSpeed: 20
   isShotgun: 0
+  isMagnet: 0
 --- !u!114 &114000012636128410
 MonoBehaviour:
   m_ObjectHideFlags: 1

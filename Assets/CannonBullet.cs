@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class CannonBullet : MonoBehaviour {
+    public bool isStrongBullet = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +22,6 @@ public class CannonBullet : MonoBehaviour {
             var effect = EffectSpawner.instance.GetEffect("hit");
             effect.transform.position = transform.position;
             effect.SetActive(true);
-            
-            col.rigidbody.angularVelocity = Random.Range(-5, 5);
-            // Destroy(gameObject);
         }
         
     }
@@ -32,6 +30,9 @@ public class CannonBullet : MonoBehaviour {
     {
         if (col.rigidbody != null)
         {
+            if(isStrongBullet)
+                col.rigidbody.velocity = Random.insideUnitCircle.normalized * col.rigidbody.velocity.magnitude;
+            col.rigidbody.angularVelocity = Random.Range(-5, 5);
             Destroy(gameObject);
         }
     }
