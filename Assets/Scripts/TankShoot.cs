@@ -7,8 +7,8 @@ public class TankShoot : MonoBehaviour {
     public GameObject bullet;
     public int shootNum;
     public int curShootNum;
-    public float shootInterval = 0.1f;
-    public float shootTimer = 0.2f;
+    public float shootInterval;
+    public float shootTimer;
     public float timer = 0f;
     public KeyCode keyCode;
     public float bulletSpeed;
