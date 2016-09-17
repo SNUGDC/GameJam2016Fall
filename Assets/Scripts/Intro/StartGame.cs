@@ -5,18 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public Text Player1Key;
-    public Text Player2Key;
-    public Text Player3Key;
-    public Text Player4Key;
+    public Text[] PlayerKey;
 
     public GameObject Title;
     public GameObject Lobby;
-    public GameObject Player1;
-    public GameObject Player2;
-    public GameObject Player3;
-    public GameObject Player4;
+    public GameObject[] Player;
     public GameObject CountDown;
+
+    public Sprite[] TankSprite;
+    public Image[] TankImage;
+    public int[] Key;
+    public int[] WhichTank;
 
     private int WhichPlayer;
     private float DelayTime;
@@ -24,18 +23,18 @@ public class StartGame : MonoBehaviour
     void Start()
     {
         PlayerPrefs.DeleteAll();
-        Player1.SetActive(true);
-        Player2.SetActive(false);
-        Player3.SetActive(false);
-        Player4.SetActive(false);
+        Player[0].SetActive(true);
+        Player[1].SetActive(false);
+        Player[2].SetActive(false);
+        Player[3].SetActive(false);
 
         WhichPlayer = 1;
         DelayTime = 0;
 
-        Player1Key.text = "";
-        Player2Key.text = "";
-        Player3Key.text = "";
-        Player4Key.text = "";
+        PlayerKey[0].text = "";
+        PlayerKey[1].text = "";
+        PlayerKey[2].text = "";
+        PlayerKey[3].text = "";
     }
 
 	void Update()
@@ -58,19 +57,21 @@ public class StartGame : MonoBehaviour
                 Lobby.GetComponent<RectTransform>().position = new Vector3(990, 540, 0);
                 break;
             case 3:
-                Player2.SetActive(true);
+                Player[1].SetActive(true);
                 CountDown.SetActive(true);
                 break;
             case 4:
-                Player3.SetActive(true);
+                Player[2].SetActive(true);
                 break;
             case 5:
-                Player4.SetActive(true);
+                Player[3].SetActive(true);
                 break;
             default:
                 break;
         }
 
+        ShowKey();
+        ChangeTank();
         WaitNextPlayer ();
         ShowCountDown();
 	}
@@ -82,10 +83,7 @@ public class StartGame : MonoBehaviour
         {
             if(Input.GetKeyDown((KeyCode)i))
             {
-                Debug.Log ((KeyCode)i);
                 StoreKey (i);
-                ShowKey (i);
-                Debug.Log (WhichPlayer);
                 return (KeyCode)i;
             }
         }
@@ -133,31 +131,75 @@ public class StartGame : MonoBehaviour
         }
     }
 
-    void ShowKey(int i)
+    void ShowKey()
     {
         if (PlayerPrefs.HasKey ("Player1"))
         {
-            int Key = PlayerPrefs.GetInt ("Player1");
+            Key[0] = PlayerPrefs.GetInt ("Player1");
 
-            Player1Key.text = ((KeyCode)Key).ToString();
+            PlayerKey[0].text = ((KeyCode)Key[0]).ToString();
         }
         if (PlayerPrefs.HasKey ("Player2"))
         {
-            int Key = PlayerPrefs.GetInt ("Player2");
+            Key[1] = PlayerPrefs.GetInt ("Player2");
 
-            Player2Key.text = ((KeyCode)Key).ToString();
+            PlayerKey[1].text = ((KeyCode)Key[1]).ToString();
         }
         if (PlayerPrefs.HasKey ("Player3"))
         {
-            int Key = PlayerPrefs.GetInt ("Player3");
+            Key[2] = PlayerPrefs.GetInt ("Player3");
 
-            Player3Key.text = ((KeyCode)Key).ToString();
+            PlayerKey[2].text = ((KeyCode)Key[2]).ToString();
         }
         if (PlayerPrefs.HasKey ("Player4"))
         {
-            int Key = PlayerPrefs.GetInt ("Player4");
+            Key[3] = PlayerPrefs.GetInt ("Player4");
 
-            Player4Key.text = ((KeyCode)Key).ToString();
+            PlayerKey[3].text = ((KeyCode)Key[3]).ToString();
+        }
+    }
+
+    void ChangeTank()
+    {
+        if (PlayerPrefs.HasKey("Player1"))
+        {
+            if (Input.GetKeyDown((KeyCode)Key[0]))
+            {
+                int i = WhichTank[0] % 5;
+
+                TankImage[0].sprite = TankSprite[i];
+                WhichTank[0] += 1;
+            }
+        }
+        if (PlayerPrefs.HasKey("Player2"))
+        {
+            if (Input.GetKeyDown((KeyCode)Key[1]))
+            {
+                int i = WhichTank[1] % 5;
+
+                TankImage[1].sprite = TankSprite[i];
+                WhichTank[1] += 1;
+            }
+        }
+        if (PlayerPrefs.HasKey("Player3"))
+        {
+            if (Input.GetKeyDown((KeyCode)Key[2]))
+            {
+                int i = WhichTank[2] % 5;
+
+                TankImage[2].sprite = TankSprite[i];
+                WhichTank[2] += 1;
+            }
+        }
+        if (PlayerPrefs.HasKey("Player4"))
+        {
+            if (Input.GetKeyDown((KeyCode)Key[3]))
+            {
+                int i = WhichTank[3] % 5;
+
+                TankImage[3].sprite = TankSprite[i];
+                WhichTank[3] += 1;
+            }
         }
     }
 
@@ -169,7 +211,7 @@ public class StartGame : MonoBehaviour
 
             if (DelayTime > 5f)
             {
-                SceneManager.LoadScene ("Select");
+                Debug.Log("Next Scene");
             }
         }
     }
