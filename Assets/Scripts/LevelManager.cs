@@ -31,12 +31,6 @@ public class LevelManager : MonoBehaviour
         }
 
         players = Player.currentPlayers;
-        if(players == null) { // For testing
-            Player player1 = new Player(KeyCode.Space);
-            Player player2 = new Player(KeyCode.Return);
-            Player.currentPlayers = new List<Player>() {player1, player2};
-            players = Player.currentPlayers;
-        }
 
         for (int i = 0; i < players.Count; i++) {
             Player player = players[i];
