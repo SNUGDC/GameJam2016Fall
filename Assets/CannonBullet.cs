@@ -15,7 +15,7 @@ public class CannonBullet : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("boom");
+        //Debug.Log("boom");
         if (col.rigidbody != null)
         {
             var effect = EffectSpawner.instance.GetEffect("hit");
