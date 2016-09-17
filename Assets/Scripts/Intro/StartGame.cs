@@ -173,10 +173,10 @@ public class StartGame : MonoBehaviour
         {
             if (Input.GetKeyDown((KeyCode)Key[0]))
             {
-                int i = WhichTank[0] % 5;
-
-                TankImage[0].sprite = TankSprite[i];
                 WhichTank[0] += 1;
+
+                int i = WhichTank[0] % 5;
+                TankImage[0].sprite = TankSprite[i];
                 DelayTime = 0;
                 colors[0] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
                 TankImage[0].color = colors[0];
@@ -186,10 +186,10 @@ public class StartGame : MonoBehaviour
         {
             if (Input.GetKeyDown((KeyCode)Key[1]))
             {
-                int i = WhichTank[1] % 5;
-
-                TankImage[1].sprite = TankSprite[i];
                 WhichTank[1] += 1;
+
+                int i = WhichTank[1] % 5;
+                TankImage[1].sprite = TankSprite[i];
                 DelayTime = 0;
                 colors[1] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
                 TankImage[1].color = colors[1];
@@ -199,10 +199,10 @@ public class StartGame : MonoBehaviour
         {
             if (Input.GetKeyDown((KeyCode)Key[2]))
             {
-                int i = WhichTank[2] % 5;
-
-                TankImage[2].sprite = TankSprite[i];
                 WhichTank[2] += 1;
+
+                int i = WhichTank[2] % 5;
+                TankImage[2].sprite = TankSprite[i];
                 DelayTime = 0;
                 colors[2] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
                 TankImage[2].color = colors[2];
@@ -212,10 +212,10 @@ public class StartGame : MonoBehaviour
         {
             if (Input.GetKeyDown((KeyCode)Key[3]))
             {
-                int i = WhichTank[3] % 5;
-
-                TankImage[3].sprite = TankSprite[i];
                 WhichTank[3] += 1;
+
+                int i = WhichTank[3] % 5;
+                TankImage[3].sprite = TankSprite[i];
                 DelayTime = 0;
                 colors[3] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
                 TankImage[3].color = colors[3];
