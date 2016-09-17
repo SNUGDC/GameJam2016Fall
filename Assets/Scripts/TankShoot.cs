@@ -45,6 +45,11 @@ public class TankShoot : MonoBehaviour {
             while (curShootNum > 0)
             {
                 Debug.Log("Shoot");
+                GameObject effect = EffectSpawner.instance.GetEffect("shoot");
+                effect.transform.position = shootPos.transform.position;
+                effect.transform.rotation = shootPos.transform.rotation;
+                effect.SetActive(true);
+                
                 GameObject Bullet = Instantiate(bullet, shootPos.transform.position, Quaternion.identity) as GameObject;
                 Bullet.transform.rotation = shootPos.transform.rotation;
                 // transform.up is green axis
