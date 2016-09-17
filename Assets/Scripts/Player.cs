@@ -31,7 +31,7 @@ public class Player {
         // Initialize variables that are used under a single level scope
         this.tank = tank;
         tank.key = key;
-        lap = 0;
+        lap = 1;
         passedCheckpoints = new List<Checkpoint>();
     }
 }
