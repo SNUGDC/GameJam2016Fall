@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,7 @@ public class StartGame : MonoBehaviour
 
     public GameObject Title;
     public GameObject Lobby;
-    public GameObject[] Player;
+    public GameObject[] Players;
     public GameObject CountDown;
 
     public Sprite[] TankSprite;
@@ -22,11 +23,13 @@ public class StartGame : MonoBehaviour
 
     void Start()
     {
+        Player.currentPlayers = new List<Player>();
+
         PlayerPrefs.DeleteAll();
-        Player[0].SetActive(true);
-        Player[1].SetActive(false);
-        Player[2].SetActive(false);
-        Player[3].SetActive(false);
+        Players[0].SetActive(true);
+        Players[1].SetActive(false);
+        Players[2].SetActive(false);
+        Players[3].SetActive(false);
 
         WhichPlayer = 1;
         DelayTime = 0;
@@ -57,14 +60,14 @@ public class StartGame : MonoBehaviour
                 Lobby.GetComponent<RectTransform>().position = new Vector3(990, 540, 0);
                 break;
             case 3:
-                Player[1].SetActive(true);
+                Players[1].SetActive(true);
                 CountDown.SetActive(true);
                 break;
             case 4:
-                Player[2].SetActive(true);
+                Players[2].SetActive(true);
                 break;
             case 5:
-                Player[3].SetActive(true);
+                Players[3].SetActive(true);
                 break;
             default:
                 break;
@@ -238,9 +241,12 @@ public class StartGame : MonoBehaviour
 
             for (int i = 1; i < WhichPlayer; i++)
             {
-                new Player((KeyCode)Key[i - 1], (TankEnum)(WhichTank[i - 1] % 5));
+                Player player = new Player((KeyCode)Key[i - 1], (TankEnum)(WhichTank[i - 1] % 5));
+                Player.currentPlayers.Add(player);
                 Debug.Log(i);
             }
+
+            SceneManager.LoadScene("Main");
         }
     }
 }
