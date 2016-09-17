@@ -16,11 +16,13 @@ public class Player {
     // Variables preserved from when players are selected to result phase
     public KeyCode key;
     public TankEnum tankenum;
+    public Color color;
     //TODO: public TankType tankType;
 
-    public Player(KeyCode key, TankEnum tankenum) {
+    public Player(KeyCode key, TankEnum tankenum, Color color) {
         this.key = key;
         this.tankenum = tankenum;
+        this.color = color;
     }
 
     

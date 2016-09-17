@@ -17,6 +17,7 @@ public class StartGame : MonoBehaviour
     public Image[] TankImage;
     public int[] Key;
     public int[] WhichTank;
+    public Color[] colors;
 
     private int WhichPlayer;
     private float DelayTime;
@@ -38,6 +39,8 @@ public class StartGame : MonoBehaviour
         PlayerKey[1].text = "";
         PlayerKey[2].text = "";
         PlayerKey[3].text = "";
+
+        colors = new Color[4];
     }
 
 	void Update()
@@ -173,6 +176,8 @@ public class StartGame : MonoBehaviour
                 TankImage[0].sprite = TankSprite[i];
                 WhichTank[0] += 1;
                 DelayTime = 0;
+                colors[0] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+                TankImage[0].color = colors[0];
             }
         }
         if (PlayerPrefs.HasKey("Player2"))
@@ -184,6 +189,8 @@ public class StartGame : MonoBehaviour
                 TankImage[1].sprite = TankSprite[i];
                 WhichTank[1] += 1;
                 DelayTime = 0;
+                colors[1] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+                TankImage[1].color = colors[1];
             }
         }
         if (PlayerPrefs.HasKey("Player3"))
@@ -195,6 +202,8 @@ public class StartGame : MonoBehaviour
                 TankImage[2].sprite = TankSprite[i];
                 WhichTank[2] += 1;
                 DelayTime = 0;
+                colors[2] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+                TankImage[2].color = colors[2];
             }
         }
         if (PlayerPrefs.HasKey("Player4"))
@@ -206,6 +215,8 @@ public class StartGame : MonoBehaviour
                 TankImage[3].sprite = TankSprite[i];
                 WhichTank[3] += 1;
                 DelayTime = 0;
+                colors[3] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+                TankImage[3].color = colors[3];
             }
         }
     }
@@ -241,7 +252,7 @@ public class StartGame : MonoBehaviour
 
             for (int i = 1; i < WhichPlayer; i++)
             {
-                Player player = new Player((KeyCode)Key[i - 1], (TankEnum)(WhichTank[i - 1] % 5));
+                Player player = new Player((KeyCode)Key[i - 1], (TankEnum)(WhichTank[i - 1] % 5), colors[i - 1]);
                 Player.currentPlayers.Add(player);
                 Debug.Log(i);
             }

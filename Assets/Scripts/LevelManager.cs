@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("There is no player, use temporary player");
             players = new List<Player>()
             {
-                new Player(KeyCode.A, TankEnum.S89)
+                new Player(KeyCode.A, TankEnum.S89, new Color(1f,1f,1f,1f))
             };
         }
 
