@@ -54,5 +54,6 @@ public class CameraZoom : MonoBehaviour
 		float maxRatio = Mathf.Max(maxX - 1, -minY, maxY - 1, -minY);
 		camera.orthographicSize = camera.orthographicSize * (maxRatio + 1.1f);
 		camera.orthographicSize = Mathf.Max(camera.orthographicSize, 25f);
+		camera.orthographicSize = Mathf.Min(camera.orthographicSize, 40f);
 	}
 }
