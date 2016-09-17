@@ -5,7 +5,10 @@ public class TankShoot : MonoBehaviour {
 
     public GameObject shootPos;
     public GameObject bullet;
-    float shootTimer = 0.2f;
+    public int shootNum;
+    public int curShootNum;
+    public float shootInterval = 0.05f;
+    public float shootTimer = 0.2f;
     public float timer = 0f;
     public KeyCode keyCode;
     public float bulletSpeed = 50f;
@@ -31,11 +34,20 @@ public class TankShoot : MonoBehaviour {
            //Debug.Log(timer);
             if (timer > shootTimer)
             {
-                Debug.Log("Shoot");
-                GameObject Bullet = Instantiate(bullet, shootPos.transform.position, Quaternion.identity) as GameObject;
-                Bullet.transform.rotation = shootPos.transform.rotation;
-                // transform.up is green axis
-                Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
+                curShootNum = shootNum;
+                while (curShootNum > 0)
+                {
+                    Debug.Log("Shoot");
+                    GameObject Bullet = Instantiate(bullet, shootPos.transform.position, Quaternion.identity) as GameObject;
+                    Bullet.transform.rotation = shootPos.transform.rotation;
+                    // transform.up is green axis
+                    Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
+                    StartCoroutine(shootIntervalTimer());
+                    curShootNum--;
+                    Debug.Log(curShootNum);
+                    Debug.Break();
+                }
+                
             }
             else
             {
@@ -56,5 +68,11 @@ public class TankShoot : MonoBehaviour {
             }
             yield return null;
         }
+    }
+
+    IEnumerator shootIntervalTimer()
+    {
+        yield return new WaitForSeconds(shootInterval);
+        yield break;
     }
 }

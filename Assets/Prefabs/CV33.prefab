@@ -82,7 +82,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013276870646}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0.81
   m_AngularDrag: 5
   m_GravityScale: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  force: 10
+  force: 12
   key: 9
 --- !u!114 &114000011839038622
 MonoBehaviour:
@@ -131,7 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPos: {fileID: 1000010908225218}
-  bullet: {fileID: 1000013443469360, guid: 2370af0dd87df0a4e8c91540bb6bca6a, type: 2}
+  bullet: {fileID: 1000013627765478, guid: e775ebaa9a5e80f4a933ceb0fd40bb5e, type: 2}
+  shootNum: 1
+  shootInterval: 0.05
+  shootTimer: 0.2
   timer: 0
   keyCode: 32
   bulletSpeed: 50
