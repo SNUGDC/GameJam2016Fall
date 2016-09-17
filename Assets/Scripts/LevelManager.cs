@@ -59,11 +59,16 @@ public class LevelManager : MonoBehaviour
 	    foreach (Player player in players) {
 	        if (goal.IsTouchingPlayer(player) && (player.passedCheckpoints.Count == checkpoints.Count)) {
 	            // Reached All checkpoints and returned to goal
-	            if (player.lap == 3) {
-                    Debug.Log(player.ToString() + " WINS!!");
+	            if (player.lap == 3)
+	            {
+	                Debug.Log(player.ToString() + " WINS!!");
 	            }
-	            player.lap += 1;
-                player.passedCheckpoints = new List<Checkpoint>();
+	            else
+	            {
+                    player.lap += 1;
+                    player.passedCheckpoints = new List<Checkpoint>();
+                    Debug.Log(player.ToString() + " Lap " + player.lap.ToString());
+                }
 	        }
 	    }
 	}
