@@ -45,10 +45,10 @@ public class Tank : MonoBehaviour
         rigidbody.angularVelocity = Mathf.Clamp(rigidbody.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
     }
 
+<<<<<<< HEAD
     public static GameObject tankEnumToPrefab(TankEnum tankEnum) {
         return Resources.Load("Prefabs/" + tankEnum.ToString()) as GameObject;
-    }
-
+=======
     void OnTriggerEnter2D(Collider2D col)
     {
         triggerList.Add(col);
@@ -72,5 +72,6 @@ public class Tank : MonoBehaviour
             roadCondition = 0.5f;
             dustEffect.ForEach(e => e.Play());
         }
+>>>>>>> origin/master
     }
 }

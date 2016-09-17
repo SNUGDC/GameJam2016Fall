@@ -57,7 +57,7 @@ public class StartGame : MonoBehaviour
         {
             case 2:
                 Title.SetActive(false);
-                Lobby.GetComponent<RectTransform>().position = new Vector3(990, 540, 0);
+                Lobby.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,0);
                 break;
             case 3:
                 Players[1].SetActive(true);

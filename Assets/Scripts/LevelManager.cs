@@ -32,9 +32,18 @@ public class LevelManager : MonoBehaviour
 
         players = Player.currentPlayers;
 
+        if (players == null || players.Count == 0)
+        {
+            Debug.LogError("There is no player, use temporary player");
+            players = new List<Player>()
+            {
+                new Player(KeyCode.A, TankEnum.S89)
+            };
+        }
+
         for (int i = 0; i < players.Count; i++) {
             Player player = players[i];
-            GameObject tankObject = Instantiate(tankPrefab, startingPoints[i].position, startingPoints[i].rotation) as GameObject;
+            GameObject tankObject = Instantiate(Tank.tankEnumToPrefab(player.tankenum), startingPoints[i].position, startingPoints[i].rotation) as GameObject;
             Tank tank = tankObject.GetComponent<Tank>();
             player.init(tank);
         }
@@ -53,11 +62,16 @@ public class LevelManager : MonoBehaviour
 	    foreach (Player player in players) {
 	        if (goal.IsTouchingPlayer(player) && (player.passedCheckpoints.Count == checkpoints.Count)) {
 	            // Reached All checkpoints and returned to goal
-	            if (player.lap == 3) {
-                    Debug.Log(player.ToString() + " WINS!!");
+	            if (player.lap == 3)
+	            {
+	                Debug.Log(player.ToString() + " WINS!!");
 	            }
-	            player.lap += 1;
-                player.passedCheckpoints = new List<Checkpoint>();
+	            else
+	            {
+                    player.lap += 1;
+                    player.passedCheckpoints = new List<Checkpoint>();
+                    Debug.Log(player.ToString() + " Lap " + player.lap.ToString());
+                }
 	        }
 	    }
 	}
