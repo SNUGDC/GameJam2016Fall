@@ -244,6 +244,16 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 4f1f9d6da345b4b4a96039b4f3bf2b5d,
         type: 3}
+    - target: {fileID: 114000010851296100, guid: 8eaaddc0b82bc8d4594e2119c9e125b1,
+        type: 2}
+      propertyPath: key
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000012023147944, guid: 8eaaddc0b82bc8d4594e2119c9e125b1,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 5.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8eaaddc0b82bc8d4594e2119c9e125b1, type: 2}
   m_IsPrefabParent: 0
@@ -282,7 +292,8 @@ MonoBehaviour:
   shootPos: {fileID: 900210972}
   bullet: {fileID: 1000013443469360, guid: 2370af0dd87df0a4e8c91540bb6bca6a, type: 2}
   timer: 0
-  keyCode: 32
+  keyCode: 13
+  bulletSpeed: 50
 --- !u!1 &448647778
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +560,7 @@ MonoBehaviour:
   bullet: {fileID: 1000013443469360, guid: 2370af0dd87df0a4e8c91540bb6bca6a, type: 2}
   timer: 0
   keyCode: 32
+  bulletSpeed: 50
 --- !u!1 &965951627
 GameObject:
   m_ObjectHideFlags: 0

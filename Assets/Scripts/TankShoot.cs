@@ -7,8 +7,9 @@ public class TankShoot : MonoBehaviour {
     public GameObject bullet;
     float shootTimer = 0.2f;
     public float timer = 0f;
-    public KeyCode keyCode = KeyCode.Space;
-    float bulletSpeed = 10f;
+    //public KeyCode keyCode = KeyCode.Space;
+    public KeyCode keyCode;
+    public float bulletSpeed = 50f;
     float curTime = 0f;
     bool keyHold = false;
 
