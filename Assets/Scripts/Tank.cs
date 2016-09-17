@@ -40,4 +40,8 @@ public class Tank : MonoBehaviour
         rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, maxSpeed);
         rigidbody.angularVelocity = Mathf.Clamp(rigidbody.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
     }
+
+    public static GameObject tankEnumToPrefab(TankEnum tankEnum) {
+        return Resources.Load("Prefabs/" + tankEnum.ToString()) as GameObject;
+    }
 }

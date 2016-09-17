@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < players.Count; i++) {
             Player player = players[i];
-            GameObject tankObject = Instantiate(tankPrefab, startingPoints[i].position, startingPoints[i].rotation) as GameObject;
+            GameObject tankObject = Instantiate(Tank.tankEnumToPrefab(player.tankenum), startingPoints[i].position, startingPoints[i].rotation) as GameObject;
             Tank tank = tankObject.GetComponent<Tank>();
             player.init(tank);
         }
