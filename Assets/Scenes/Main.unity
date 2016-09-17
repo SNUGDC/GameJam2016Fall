@@ -264,6 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a87adf078a944f58ac3c3ee9b0d9ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userName: {fileID: 1443762018}
+  howToReturnLobby: {fileID: 1893865683}
 --- !u!114 &65302297
 MonoBehaviour:
   m_ObjectHideFlags: 0

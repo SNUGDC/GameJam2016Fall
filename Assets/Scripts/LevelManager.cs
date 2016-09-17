@@ -13,8 +13,9 @@ public class LevelManager : MonoBehaviour
     private List<Player> players;
     private RankingUI rankingUI;
     private ResultUI resultUI;
+    private bool gameEnd = false;
 
-    public static int GoalLap = 3;
+    public static int GoalLap = 1;
     
     void Awake ()
     {
@@ -57,6 +58,10 @@ public class LevelManager : MonoBehaviour
     }
 
 	void Update () {
+        if (gameEnd)
+        {
+            return;
+        }
         // Add checkpoint
 	    
         bool needRankingUpdate = false;
@@ -77,6 +82,10 @@ public class LevelManager : MonoBehaviour
 	            if (player.lap == GoalLap)
 	            {
 	                Debug.Log(player.ToString() + " WINS!!");
+                    resultUI.Set(player);
+                    gameEnd = true;
+                    // Time.timeScale = 0;
+                    break;
 	            }
 	            else
 	            {
@@ -85,6 +94,16 @@ public class LevelManager : MonoBehaviour
                     Debug.Log(player.ToString() + " Lap " + player.lap.ToString());
                 }
 	        }
-	    }
-	}
+        }
+
+        if (gameEnd)
+        {
+            foreach (Player player in players)
+            {
+                player.tank.enabled = false;
+                player.tank.GetComponent<TankShoot>().enabled = false;
+            }
+        }
+	    
+    }
 }
