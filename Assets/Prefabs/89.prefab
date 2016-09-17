@@ -181,7 +181,7 @@ MonoBehaviour:
   shootTimer: 0.2
   timer: 0
   keyCode: 32
-  bulletSpeed: 10
+  bulletSpeed: 20
   isShotgun: 1
 --- !u!114 &114000013975806548
 MonoBehaviour:
