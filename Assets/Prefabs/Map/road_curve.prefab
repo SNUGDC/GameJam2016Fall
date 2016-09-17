@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012273717422}
   - 212: {fileID: 212000013534270410}
+  - 60: {fileID: 60000012559314158}
   m_Layer: 0
   m_Name: road_curve
   m_TagString: Untagged
@@ -40,6 +41,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!60 &60000012559314158
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012555193956}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.85999995, y: 5.8799996}
+      - {x: -1.18, y: 5.7999997}
+      - {x: -1.88, y: 5.5}
+      - {x: -3, y: 4.7599998}
+      - {x: -3.36, y: 4.5}
+      - {x: -3.9199998, y: 4.3199997}
+      - {x: -4.38, y: 3.9599998}
+      - {x: -4.72, y: 3.52}
+      - {x: -4.96, y: 3.3999999}
+      - {x: -5.2599998, y: 3.1}
+      - {x: -5.48, y: 2.6}
+      - {x: -5.5, y: 2.02}
+      - {x: -5.8599997, y: 1.68}
+      - {x: -5.9, y: 1.4399999}
+      - {x: -5.9, y: 1.06}
+      - {x: -5.68, y: 0.71999997}
+      - {x: -5.8399997, y: 0.34}
+      - {x: -5.9, y: 0.14}
+      - {x: -5.9, y: 0}
+      - {x: 0, y: 0}
+      - {x: 0, y: 5.7599998}
+      - {x: -0.42, y: 5.8799996}
 --- !u!212 &212000013534270410
 SpriteRenderer:
   m_ObjectHideFlags: 1

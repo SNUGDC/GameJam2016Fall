@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013135004544}
   - 212: {fileID: 212000013013461768}
+  - 61: {fileID: 61000010132940826}
   m_Layer: 0
   m_Name: road
   m_TagString: Untagged
@@ -40,6 +41,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &61000010132940826
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011655372316}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -3, y: 3}
+  serializedVersion: 2
+  m_Size: {x: 6, y: 6}
 --- !u!212 &212000013013461768
 SpriteRenderer:
   m_ObjectHideFlags: 1
