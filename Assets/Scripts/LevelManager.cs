@@ -11,7 +11,10 @@ public class LevelManager : MonoBehaviour
     private List<Transform> startingPoints;
     private Checkpoint goal;
     private List<Player> players;
-    
+    private RankingUI rankingUI;
+    private ResultUI resultUI;
+
+    public static int GoalLap = 3;
     
     void Awake ()
     {
@@ -21,8 +24,6 @@ public class LevelManager : MonoBehaviour
         }
         goal = checkpoints[0]; // Assumes that first checkpoint is goal
         
-
-
         startingPoints = new List<Transform>();
         foreach (Transform childTransform in startingPointsObject.transform)
         {
@@ -37,7 +38,8 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("There is no player, use temporary player");
             players = new List<Player>()
             {
-                new Player(KeyCode.A, TankEnum.S89)
+                new Player(KeyCode.A, TankEnum.S89),
+                new Player(KeyCode.S, TankEnum.Centurion)
             };
         }
 
@@ -47,22 +49,32 @@ public class LevelManager : MonoBehaviour
             Tank tank = tankObject.GetComponent<Tank>();
             player.init(tank);
         }
+
+        rankingUI = FindObjectOfType<RankingUI>();
+        rankingUI.Set(players);
+        resultUI = FindObjectOfType<ResultUI>();
+        resultUI.gameObject.SetActive(false);
     }
 
 	void Update () {
         // Add checkpoint
-	    foreach (Player player in players) {
+	    
+        bool needRankingUpdate = false;
+        foreach (Player player in players) {
 	        foreach (Checkpoint checkpoint in checkpoints) {
 	            if (!player.passedCheckpoints.Contains(checkpoint) && checkpoint.IsTouchingPlayer(player)) {
 	                player.passedCheckpoints.Add(checkpoint);
+                    Debug.Log("Player " + player.key + " add checkpoint");
+                    needRankingUpdate = true;
                 }
 	        }
 	    }
+        rankingUI.Set(players);
 
 	    foreach (Player player in players) {
 	        if (goal.IsTouchingPlayer(player) && (player.passedCheckpoints.Count == checkpoints.Count)) {
 	            // Reached All checkpoints and returned to goal
-	            if (player.lap == 3)
+	            if (player.lap == GoalLap)
 	            {
 	                Debug.Log(player.ToString() + " WINS!!");
 	            }
