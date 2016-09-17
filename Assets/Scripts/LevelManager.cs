@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     private ResultUI resultUI;
     private bool gameEnd = false;
 
-    public static int GoalLap = 1;
+    public static int GoalLap = 3;
     
     void Awake ()
     {
