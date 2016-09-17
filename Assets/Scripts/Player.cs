@@ -21,7 +21,7 @@ public class Player {
         this.key = key;
     }
 
-
+    /*
     // Variables preserved only under a single level scope.
     public TrainScript tank; // Better than holding a GameObject IMO
     public int lap;
@@ -33,4 +33,6 @@ public class Player {
         lap = 0;
         passedCheckpoints = new List<Checkpoint>();
     }
+
+    */
 }
