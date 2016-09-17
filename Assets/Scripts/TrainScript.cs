@@ -34,7 +34,7 @@ public class TrainScript : MonoBehaviour
 
     void FixedUpdate() {
         // Handle both rotation and acceleration by adding force at transform.right
-        rigidbody.AddForceAtPosition(transform.up * force, transform.position + transform.right * rotationDirection);
+        rigidbody.AddForceAtPosition(transform.up * force, transform.position + transform.right*2 * rotationDirection);
 
         // Set max speed and angular speed to prevent quantum leap.
         rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, maxSpeed);
