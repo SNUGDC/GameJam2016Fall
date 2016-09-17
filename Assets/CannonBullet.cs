@@ -22,7 +22,7 @@ public class CannonBullet : MonoBehaviour {
             effect.transform.position = transform.position;
             effect.SetActive(true);
             
-            col.rigidbody.angularDrag = Random.Range(-5, 5);
+            col.rigidbody.angularVelocity = Random.Range(-5, 5);
             // Destroy(gameObject);
         }
         

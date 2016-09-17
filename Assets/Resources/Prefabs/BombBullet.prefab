@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013495776332}
   - 50: {fileID: 50000010577349578}
-  - 114: {fileID: 114000012591733152}
   - 58: {fileID: 58000013637029024}
+  - 114: {fileID: 114000013547724190}
   m_Layer: 10
   m_Name: BombBullet
   m_TagString: Untagged
@@ -103,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114000012591733152
+--- !u!114 &114000013547724190
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010888064320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1c8947b28fa8cb4ea8cbfe416f3a59b, type: 3}
+  m_Script: {fileID: 11500000, guid: 092b35b42d37f564e841f8037f4206a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212000013928198304
