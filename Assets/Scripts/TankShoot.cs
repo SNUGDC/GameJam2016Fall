@@ -15,6 +15,7 @@ public class TankShoot : MonoBehaviour {
     float curTime = 0f;
     bool keyHold = false;
     public bool isShotgun = false;
+    public bool isMagnet = false;
 
 	// Use this for initialization
 	void Start () {
@@ -56,8 +57,7 @@ public class TankShoot : MonoBehaviour {
                 if (isShotgun)
                 {
                     Bullet.transform.rotation = shootPos.transform.rotation;
-                    // transform.up is green axis
-                    
+                    // transform.up is green axis 
                     Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up +  new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f), 0) * bulletSpeed;
                     //yield return StartCoroutine(shootIntervalTimer());
                 }
@@ -67,6 +67,17 @@ public class TankShoot : MonoBehaviour {
                     // transform.up is green axis
                     Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
                     yield return StartCoroutine(shootIntervalTimer());
+                }
+
+                if (isMagnet)
+                {
+                    Bullet.transform.rotation = shootPos.transform.rotation;
+                    // transform.up is green axis
+                    Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
+                    Bullet.GetComponent<MagnetBullet>().Owner = gameObject;
+                    Debug.Log(Bullet.GetComponent<MagnetBullet>().Owner);
+                    yield return StartCoroutine(shootIntervalTimer());
+
                 }
 
                 curShootNum--;

@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012400429820}
   - 50: {fileID: 50000014224261078}
-  - 114: {fileID: 114000011810117714}
   - 58: {fileID: 58000012190338818}
   - 114: {fileID: 114000012090804610}
   m_Layer: 10
@@ -81,7 +80,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013325589008}
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -104,17 +103,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114000011810117714
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013325589008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1c8947b28fa8cb4ea8cbfe416f3a59b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000012090804610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,6 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cc96e7acaf0aa45a4ebd5e74cde4d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magnetPower: 50
+  Owner: {fileID: 0}
+  Prey: {fileID: 0}
 --- !u!212 &212000012559112450
 SpriteRenderer:
   m_ObjectHideFlags: 1
