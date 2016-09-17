@@ -633,7 +633,7 @@ MonoBehaviour:
   - {fileID: 1627025368}
   Title: {fileID: 74300670}
   Lobby: {fileID: 1552681271}
-  Player:
+  Players:
   - {fileID: 1824297555}
   - {fileID: 1333674745}
   - {fileID: 890460730}
