@@ -32,6 +32,15 @@ public class LevelManager : MonoBehaviour
 
         players = Player.currentPlayers;
 
+        if (players == null || players.Count == 0)
+        {
+            Debug.LogError("There is no player, use temporary player");
+            players = new List<Player>()
+            {
+                new Player(KeyCode.A, TankEnum.S89)
+            };
+        }
+
         for (int i = 0; i < players.Count; i++) {
             Player player = players[i];
             GameObject tankObject = Instantiate(Tank.tankEnumToPrefab(player.tankenum), startingPoints[i].position, startingPoints[i].rotation) as GameObject;
