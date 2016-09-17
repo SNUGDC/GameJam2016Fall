@@ -34,7 +34,8 @@ public class TankShoot : MonoBehaviour {
             if (timer > shootTimer)
             {
                 Debug.Log("Shoot");
-                Instantiate(bullet, shootPos.transform);
+                GameObject Bullet = Instantiate(bullet, shootPos.transform) as GameObject;
+                Bullet.GetComponent<Rigidbody2D>().velocity = Vector2.up * 1f;
             }
             timer = 0f;
             keyHold = false;
@@ -43,11 +44,8 @@ public class TankShoot : MonoBehaviour {
     }
 
     IEnumerator Timer()
-    {
-       
-            timer += Time.deltaTime;
-        
-        //yield return null;
+    {       
+        timer += Time.deltaTime;   
         yield break;
     }
 
