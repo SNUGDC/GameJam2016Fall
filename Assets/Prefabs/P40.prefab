@@ -132,10 +132,11 @@ MonoBehaviour:
   shootNum: 1
   curShootNum: 0
   shootInterval: 0.05
-  shootTimer: 0.2
+  shootTimer: 0.3
   timer: 0
   keyCode: 32
   bulletSpeed: 50
+  isShotgun: 0
 --- !u!114 &114000013237093598
 MonoBehaviour:
   m_ObjectHideFlags: 1

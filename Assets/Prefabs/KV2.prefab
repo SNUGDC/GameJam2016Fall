@@ -113,7 +113,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011376792384}
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 1.2
   m_LinearDrag: 0.81
   m_AngularDrag: 5
   m_GravityScale: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011376792384}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b17d94f2577eea469de9ca430178e19, type: 3}
   m_Name: 
@@ -171,6 +171,7 @@ MonoBehaviour:
   timer: 0
   keyCode: 13
   bulletSpeed: 50
+  isShotgun: 0
 --- !u!114 &114000012703369342
 MonoBehaviour:
   m_ObjectHideFlags: 1
