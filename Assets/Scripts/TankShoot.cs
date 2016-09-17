@@ -7,47 +7,52 @@ public class TankShoot : MonoBehaviour {
     public GameObject bullet;
     float shootTimer = 0.2f;
     public float timer = 0f;
+    public KeyCode keyCode = KeyCode.Space;
+    float bulletSpeed = 10f;
     float curTime = 0f;
     bool keyHold = false;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        StartCoroutine(Timer());
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(keyCode))
         {
             keyHold = true;
         }
         //Debug.Log(timer);
 
-        if (keyHold == true)
-        {
-            StartCoroutine(Timer());
-        }
-
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetKeyUp(keyCode))
         {
            //Debug.Log(timer);
             if (timer > shootTimer)
             {
                 Debug.Log("Shoot");
-                GameObject Bullet = Instantiate(bullet, shootPos.transform) as GameObject;
-                Bullet.GetComponent<Rigidbody2D>().velocity = Vector2.up * 1f;
+                GameObject Bullet = Instantiate(bullet, shootPos.transform.position, Quaternion.identity) as GameObject;
+                // transform.up is green axis
+                Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
             }
-            timer = 0f;
+            else
+            {
+                Debug.Log("Cannot shoot because time is not enough. " + timer);
+            }
+            timer = 0;
             keyHold = false;
-
         }
     }
 
     IEnumerator Timer()
-    {       
-        timer += Time.deltaTime;   
-        yield break;
+    {
+        while (true)
+        {
+            if (keyHold)
+            {
+                timer += Time.deltaTime;
+            }
+            yield return null;
+        }
     }
-
-
 }
