@@ -7,7 +7,6 @@ public class TankShoot : MonoBehaviour {
     public GameObject bullet;
     float shootTimer = 0.2f;
     public float timer = 0f;
-    //public KeyCode keyCode = KeyCode.Space;
     public KeyCode keyCode;
     public float bulletSpeed = 50f;
     float curTime = 0f;
@@ -33,6 +32,7 @@ public class TankShoot : MonoBehaviour {
             {
                 Debug.Log("Shoot");
                 GameObject Bullet = Instantiate(bullet, shootPos.transform.position, Quaternion.identity) as GameObject;
+                Bullet.transform.rotation = shootPos.transform.rotation;
                 // transform.up is green axis
                 Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
             }
