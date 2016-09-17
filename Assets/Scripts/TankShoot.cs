@@ -14,6 +14,7 @@ public class TankShoot : MonoBehaviour {
     public float bulletSpeed;
     float curTime = 0f;
     bool keyHold = false;
+    public bool isShotgun = false;
 
 	// Use this for initialization
 	void Start () {
@@ -46,10 +47,22 @@ public class TankShoot : MonoBehaviour {
             {
                 Debug.Log("Shoot");
                 GameObject Bullet = Instantiate(bullet, shootPos.transform.position, Quaternion.identity) as GameObject;
-                Bullet.transform.rotation = shootPos.transform.rotation;
-                // transform.up is green axis
-                Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
-                yield return StartCoroutine(shootIntervalTimer());
+
+                if (isShotgun)
+                {
+                    Bullet.transform.rotation = shootPos.transform.rotation;
+                    // transform.up is green axis
+                    Bullet.GetComponent<Rigidbody2D>().velocity = ((Vector2)shootPos.transform.up +  new Vector2(Random.Range(-10, 10), Random.Range(-10, 10))) * bulletSpeed;
+                    //yield return StartCoroutine(shootIntervalTimer());
+                }
+                else
+                {
+                    Bullet.transform.rotation = shootPos.transform.rotation;
+                    // transform.up is green axis
+                    Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
+                    yield return StartCoroutine(shootIntervalTimer());
+                }
+
                 curShootNum--;
                 Debug.Log(curShootNum);
                 //Debug.Break();

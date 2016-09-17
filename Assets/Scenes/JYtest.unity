@@ -179,7 +179,7 @@ Prefab:
     - target: {fileID: 114000013237093598, guid: 11b8dbbb2d3aa084d94137ee96ea65ff,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11b8dbbb2d3aa084d94137ee96ea65ff, type: 2}
@@ -226,7 +226,17 @@ Prefab:
     - target: {fileID: 114000011517051740, guid: ce5439ffdbc78af42983eb2f271eaf78,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011517051740, guid: ce5439ffdbc78af42983eb2f271eaf78,
+        type: 2}
+      propertyPath: force
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000011035509532, guid: ce5439ffdbc78af42983eb2f271eaf78,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce5439ffdbc78af42983eb2f271eaf78, type: 2}
@@ -321,7 +331,17 @@ Prefab:
     - target: {fileID: 114000011190282146, guid: 03e220ecf457375499f2c2c214887621,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013968842198, guid: 03e220ecf457375499f2c2c214887621,
+        type: 2}
+      propertyPath: isShotgun
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013968842198, guid: 03e220ecf457375499f2c2c214887621,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03e220ecf457375499f2c2c214887621, type: 2}
@@ -472,7 +492,7 @@ Prefab:
     - target: {fileID: 114000013464232644, guid: d23f82fa9b708e642bcd1cee44b0710f,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d23f82fa9b708e642bcd1cee44b0710f, type: 2}
@@ -519,7 +539,7 @@ Prefab:
     - target: {fileID: 114000010710630100, guid: 71527c5a5a1598e4e8d926eb82b4791b,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71527c5a5a1598e4e8d926eb82b4791b, type: 2}
