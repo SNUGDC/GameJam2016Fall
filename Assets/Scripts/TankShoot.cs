@@ -14,6 +14,7 @@ public class TankShoot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        keyCode = GetComponent<TrainScript>().key;
         StartCoroutine(Timer());
     }
 	
