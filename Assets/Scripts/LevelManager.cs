@@ -11,7 +11,11 @@ public class LevelManager : MonoBehaviour
     private List<Transform> startingPoints;
     private Checkpoint goal;
     private List<Player> players;
-    
+    private RankingUI rankingUI;
+    private ResultUI resultUI;
+    private bool gameEnd = false;
+
+    public static int GoalLap = 1;
     
     void Awake ()
     {
@@ -21,8 +25,6 @@ public class LevelManager : MonoBehaviour
         }
         goal = checkpoints[0]; // Assumes that first checkpoint is goal
         
-
-
         startingPoints = new List<Transform>();
         foreach (Transform childTransform in startingPointsObject.transform)
         {
@@ -37,7 +39,8 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("There is no player, use temporary player");
             players = new List<Player>()
             {
-                new Player(KeyCode.A, TankEnum.S89, new Color(1f,1f,1f,1f))
+                new Player(KeyCode.A, TankEnum.S89, new Color(1f,1f,1f,1f)),
+                new Player(KeyCode.S, TankEnum.Centurion, new Color(1f,1f,1f,1f))
             };
         }
 
@@ -47,24 +50,42 @@ public class LevelManager : MonoBehaviour
             Tank tank = tankObject.GetComponent<Tank>();
             player.init(tank);
         }
+
+        rankingUI = FindObjectOfType<RankingUI>();
+        rankingUI.Set(players);
+        resultUI = FindObjectOfType<ResultUI>();
+        resultUI.gameObject.SetActive(false);
     }
 
 	void Update () {
+        if (gameEnd)
+        {
+            return;
+        }
         // Add checkpoint
-	    foreach (Player player in players) {
+	    
+        bool needRankingUpdate = false;
+        foreach (Player player in players) {
 	        foreach (Checkpoint checkpoint in checkpoints) {
 	            if (!player.passedCheckpoints.Contains(checkpoint) && checkpoint.IsTouchingPlayer(player)) {
 	                player.passedCheckpoints.Add(checkpoint);
+                    Debug.Log("Player " + player.key + " add checkpoint");
+                    needRankingUpdate = true;
                 }
 	        }
 	    }
+        rankingUI.Set(players);
 
 	    foreach (Player player in players) {
 	        if (goal.IsTouchingPlayer(player) && (player.passedCheckpoints.Count == checkpoints.Count)) {
 	            // Reached All checkpoints and returned to goal
-	            if (player.lap == 3)
+	            if (player.lap == GoalLap)
 	            {
 	                Debug.Log(player.ToString() + " WINS!!");
+                    resultUI.Set(player);
+                    gameEnd = true;
+                    // Time.timeScale = 0;
+                    break;
 	            }
 	            else
 	            {
@@ -73,6 +94,16 @@ public class LevelManager : MonoBehaviour
                     Debug.Log(player.ToString() + " Lap " + player.lap.ToString());
                 }
 	        }
-	    }
-	}
+        }
+
+        if (gameEnd)
+        {
+            foreach (Player player in players)
+            {
+                player.tank.enabled = false;
+                player.tank.GetComponent<TankShoot>().enabled = false;
+            }
+        }
+	    
+    }
 }

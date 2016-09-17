@@ -24,6 +24,8 @@ public class StartGame : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
         Player.currentPlayers = new List<Player>();
 
         PlayerPrefs.DeleteAll();
