@@ -234,6 +234,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013135004544, guid: 708e7fa4774fe445582bdc537674362e,
     type: 2}
   m_PrefabInternal: {fileID: 96542590}
+--- !u!114 &220635040 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000014210340338, guid: 82935308752ad4ebb8e6894812853f69,
+    type: 2}
+  m_PrefabInternal: {fileID: 828063939}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &224956261
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +314,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224956261}
+--- !u!114 &323018571 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000014210340338, guid: 82935308752ad4ebb8e6894812853f69,
+    type: 2}
+  m_PrefabInternal: {fileID: 461519810}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &337923148
 Prefab:
   m_ObjectHideFlags: 0
@@ -614,17 +626,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd66654bf426164888af120b5a38137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Key: {fileID: 1953082049}
-  Player2Key: {fileID: 13073782}
-  Player3Key: {fileID: 820027438}
-  Player4Key: {fileID: 1627025368}
+  PlayerKey:
+  - {fileID: 1953082049}
+  - {fileID: 13073782}
+  - {fileID: 820027438}
+  - {fileID: 1627025368}
   Title: {fileID: 74300670}
   Lobby: {fileID: 1552681271}
-  Player1: {fileID: 1824297555}
-  Player2: {fileID: 1333674745}
-  Player3: {fileID: 890460730}
-  Player4: {fileID: 56097615}
+  Player:
+  - {fileID: 1824297555}
+  - {fileID: 1333674745}
+  - {fileID: 890460730}
+  - {fileID: 56097615}
   CountDown: {fileID: 1794932232}
+  TankSprite:
+  - {fileID: 21300000, guid: be01e5815ee6da544b271c250284ce2a, type: 3}
+  - {fileID: 21300000, guid: 067963ba4df30014fbd15a51abdd4569, type: 3}
+  - {fileID: 21300000, guid: 903aca4dd7343bc42ab99da0250d351b, type: 3}
+  - {fileID: 21300000, guid: 4f1f9d6da345b4b4a96039b4f3bf2b5d, type: 3}
+  - {fileID: 21300000, guid: f4070b16dcce39544a157bc5ce77504d, type: 3}
+  TankImage:
+  - {fileID: 1792063638}
+  - {fileID: 323018571}
+  - {fileID: 220635040}
+  - {fileID: 1299960438}
+  Key: 00000000000000000000000000000000
+  WhichTank: 00000000000000000000000000000000
 --- !u!4 &560711778
 Transform:
   m_ObjectHideFlags: 0
@@ -1595,6 +1622,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4000012273717422, guid: cf4b4f87ce3f7479c8b03ae00adac1ac,
     type: 2}
   m_PrefabInternal: {fileID: 1228856366}
+--- !u!114 &1299960438 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000014210340338, guid: 82935308752ad4ebb8e6894812853f69,
+    type: 2}
+  m_PrefabInternal: {fileID: 1176908163}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1333674745 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000012204999532, guid: 82935308752ad4ebb8e6894812853f69,
@@ -2212,6 +2245,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1792063638 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000014210340338, guid: 82935308752ad4ebb8e6894812853f69,
+    type: 2}
+  m_PrefabInternal: {fileID: 1142717189}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1794932232
 GameObject:
   m_ObjectHideFlags: 0
