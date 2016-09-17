@@ -8,7 +8,7 @@ public class SpriteShadow : MonoBehaviour {
 	{
 		MoveShadowToPosition();
 	}
-	void Update()
+	void LateUpdate()
 	{
 		if(isMovingObject)
 		{
