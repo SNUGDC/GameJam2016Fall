@@ -10,25 +10,23 @@ public class TrainScript : MonoBehaviour
     private Rigidbody2D rigidbody;
 
     public float maxSpeed;
-    public float maxAngularVelocity; 
     public float force; // This parameter controls both speed and rotation
-    public float rotationDirection; // -1 or 1 // rotating clockwise or counterclockwise
+    private float maxAngularVelocity; // Probably don't need to be public?
+    private float rotationDirection; // -1 or 1 // rotating clockwise or counterclockwise
+
+    public KeyCode key;
 
 
     void Awake () {
 	    transform = GetComponent<Transform>();
         rigidbody = GetComponent<Rigidbody2D>();
-
-	    maxSpeed = 10;
-        force = 10;
+        
         maxAngularVelocity = 360;
-
         rotationDirection = 1; // counterclockwise
-
-	}
+    }
 	
 	void Update () {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetKeyDown(key)) {
             toggleDirection();
         }
     }
