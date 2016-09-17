@@ -23,13 +23,16 @@ public class CannonBullet : MonoBehaviour {
             effect.SetActive(true);
             
             col.rigidbody.angularDrag = Random.Range(-5, 5);
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
         
     }
 
-    void OnDestroy()
+    void OnCollisionExit2D(Collision2D col)
     {
-
+        if (col.rigidbody != null)
+        {
+            Destroy(gameObject);
+        }
     }
 }
