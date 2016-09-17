@@ -1,13 +1,12 @@
-﻿// Train Script
+﻿// Tank Script
 
 using UnityEngine;
-using System.Collections;
-using UnityEditorInternal;
 
 public class TrainScript : MonoBehaviour
 {
     private Transform transform;
     private Rigidbody2D rigidbody;
+    [HideInInspector] public BoxCollider2D collider;
 
     public float maxSpeed;
     public float force; // This parameter controls both speed and rotation
@@ -21,6 +20,7 @@ public class TrainScript : MonoBehaviour
     void Awake () {
 	    transform = GetComponent<Transform>();
         rigidbody = GetComponent<Rigidbody2D>();
+        collider = GetComponent<BoxCollider2D>();
     }
 	
 	void Update () {
