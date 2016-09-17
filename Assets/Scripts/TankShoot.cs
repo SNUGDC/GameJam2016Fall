@@ -45,7 +45,7 @@ public class TankShoot : MonoBehaviour {
             curShootNum = shootNum;
             while (curShootNum > 0)
             {
-                Debug.Log("Shoot");
+                //Debug.Log("Shoot");
                 GameObject effect = EffectSpawner.instance.GetEffect("shoot");
                 effect.transform.position = shootPos.transform.position;
                 effect.transform.rotation = shootPos.transform.rotation;
@@ -69,7 +69,7 @@ public class TankShoot : MonoBehaviour {
                 }
 
                 curShootNum--;
-                Debug.Log(curShootNum);
+                //Debug.Log(curShootNum);
                 //Debug.Break();
             }
 
@@ -97,7 +97,7 @@ public class TankShoot : MonoBehaviour {
 
     IEnumerator shootIntervalTimer()
     {
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
         yield return new WaitForSeconds(shootInterval);
         yield break;
     }
