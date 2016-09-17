@@ -15,9 +15,13 @@ public class CannonBullet : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("boom");
+        //Debug.Log("boom");
         if (col.rigidbody != null)
         {
+            var effect = EffectSpawner.instance.GetEffect("hit");
+            effect.transform.position = transform.position;
+            effect.SetActive(true);
+            
             col.rigidbody.angularDrag = Random.Range(-5, 5);
             Destroy(gameObject);
         }

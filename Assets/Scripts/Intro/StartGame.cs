@@ -169,6 +169,7 @@ public class StartGame : MonoBehaviour
 
                 TankImage[0].sprite = TankSprite[i];
                 WhichTank[0] += 1;
+                DelayTime = 0;
             }
         }
         if (PlayerPrefs.HasKey("Player2"))
@@ -179,6 +180,7 @@ public class StartGame : MonoBehaviour
 
                 TankImage[1].sprite = TankSprite[i];
                 WhichTank[1] += 1;
+                DelayTime = 0;
             }
         }
         if (PlayerPrefs.HasKey("Player3"))
@@ -189,6 +191,7 @@ public class StartGame : MonoBehaviour
 
                 TankImage[2].sprite = TankSprite[i];
                 WhichTank[2] += 1;
+                DelayTime = 0;
             }
         }
         if (PlayerPrefs.HasKey("Player4"))
@@ -199,6 +202,7 @@ public class StartGame : MonoBehaviour
 
                 TankImage[3].sprite = TankSprite[i];
                 WhichTank[3] += 1;
+                DelayTime = 0;
             }
         }
     }
