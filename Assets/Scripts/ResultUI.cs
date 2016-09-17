@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class ResultUI : MonoBehaviour {
 	public Text userName;
@@ -19,6 +20,8 @@ public class ResultUI : MonoBehaviour {
 
 	IEnumerator EndCheck()
 	{
+		Tween ();
+
 		yield return new WaitForSeconds(1.0f);
 
 		while (true)
@@ -31,5 +34,11 @@ public class ResultUI : MonoBehaviour {
 		}
 
 		SceneManager.LoadScene("Intro");
+	}
+
+	private void Tween()
+	{
+		transform.localScale = 0.1f * Vector3.one;
+		transform.DOScale (Vector3.one, 1.0f).SetEase(Ease.OutBack);
 	}
 }
