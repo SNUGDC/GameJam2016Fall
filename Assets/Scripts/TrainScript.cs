@@ -6,37 +6,38 @@ using UnityEditorInternal;
 
 public class TrainScript : MonoBehaviour
 {
-    public Transform transform;
-    public float maxSpeed; // unit: m/s
-    public float speed;
-    public float acceleration; // unit: m/s^2
-    public float angularSpeed; // unit: degree/s
+    private Transform transform;
+    private Rigidbody2D rigidbody;
+
+    public float maxSpeed;
+    public float maxAngularVelocity; 
+    public float force; // This parameter controls both speed and rotation
     public float rotationDirection; // -1 or 1 // rotating clockwise or counterclockwise
 
 
     void Awake () {
 	    transform = GetComponent<Transform>();
-	    maxSpeed = 10;
-	    acceleration = 3;
-        angularSpeed = 180;
+        rigidbody = GetComponent<Rigidbody2D>();
 
-        speed = 0;
+	    maxSpeed = 10;
+        force = 10;
+        maxAngularVelocity = 360;
+
         rotationDirection = 1; // counterclockwise
+
 	}
 	
 	void Update () {
-	    if (speed < maxSpeed) {
-	        speed = Mathf.Min(speed + acceleration*Time.deltaTime, maxSpeed);
-	    }
-
-        transform.Rotate(0, 0, angularSpeed * Time.deltaTime * rotationDirection);
-        transform.position += transform.up * speed * Time.deltaTime;
-
         if (Input.GetButtonDown("Fire1")) {
             toggleDirection();
         }
     }
 
+    void FixedUpdate() {
+        rigidbody.AddForceAtPosition(transform.up * force, transform.position + transform.right * rotationDirection);
+        rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, maxSpeed);
+        rigidbody.angularVelocity = Mathf.Clamp(rigidbody.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
+   }
     void toggleDirection() {
         rotationDirection *= -1;
     }
