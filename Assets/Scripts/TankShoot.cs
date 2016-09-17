@@ -7,11 +7,11 @@ public class TankShoot : MonoBehaviour {
     public GameObject bullet;
     public int shootNum;
     public int curShootNum;
-    public float shootInterval = 0.05f;
+    public float shootInterval = 0.1f;
     public float shootTimer = 0.2f;
     public float timer = 0f;
     public KeyCode keyCode;
-    public float bulletSpeed = 50f;
+    public float bulletSpeed;
     float curTime = 0f;
     bool keyHold = false;
 
@@ -31,31 +31,38 @@ public class TankShoot : MonoBehaviour {
 
         if (Input.GetKeyUp(keyCode))
         {
-           //Debug.Log(timer);
-            if (timer > shootTimer)
-            {
-                curShootNum = shootNum;
-                while (curShootNum > 0)
-                {
-                    Debug.Log("Shoot");
-                    GameObject Bullet = Instantiate(bullet, shootPos.transform.position, Quaternion.identity) as GameObject;
-                    Bullet.transform.rotation = shootPos.transform.rotation;
-                    // transform.up is green axis
-                    Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
-                    StartCoroutine(shootIntervalTimer());
-                    curShootNum--;
-                    Debug.Log(curShootNum);
-                    Debug.Break();
-                }
-                
-            }
-            else
-            {
-                Debug.Log("Cannot shoot because time is not enough. " + timer);
-            }
-            timer = 0;
-            keyHold = false;
+            //Debug.Log(timer);
+            StartCoroutine(Shoot());
+            
         }
+    }
+
+    IEnumerator Shoot()
+    {
+        if (timer > shootTimer)
+        {
+            curShootNum = shootNum;
+            while (curShootNum > 0)
+            {
+                Debug.Log("Shoot");
+                GameObject Bullet = Instantiate(bullet, shootPos.transform.position, Quaternion.identity) as GameObject;
+                Bullet.transform.rotation = shootPos.transform.rotation;
+                // transform.up is green axis
+                Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up * bulletSpeed;
+                yield return StartCoroutine(shootIntervalTimer());
+                curShootNum--;
+                Debug.Log(curShootNum);
+                //Debug.Break();
+            }
+
+        }
+        else
+        {
+            Debug.Log("Cannot shoot because time is not enough. " + timer);
+        }
+        timer = 0;
+        keyHold = false;
+        yield break;
     }
 
     IEnumerator Timer()
@@ -72,6 +79,7 @@ public class TankShoot : MonoBehaviour {
 
     IEnumerator shootIntervalTimer()
     {
+        Debug.Log(Time.time);
         yield return new WaitForSeconds(shootInterval);
         yield break;
     }

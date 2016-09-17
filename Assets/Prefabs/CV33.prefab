@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010908225218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 1.4, z: 0}
+  m_LocalPosition: {x: -0.3, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -116,9 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b17d94f2577eea469de9ca430178e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
   maxSpeed: 10
   force: 12
-  key: 9
+  key: 258
 --- !u!114 &114000011839038622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,12 +133,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPos: {fileID: 1000010908225218}
   bullet: {fileID: 1000013627765478, guid: e775ebaa9a5e80f4a933ceb0fd40bb5e, type: 2}
-  shootNum: 1
+  shootNum: 5
+  curShootNum: 0
   shootInterval: 0.05
   shootTimer: 0.2
   timer: 0
-  keyCode: 32
-  bulletSpeed: 50
+  keyCode: 98
+  bulletSpeed: 20
 --- !u!114 &114000013875895036
 MonoBehaviour:
   m_ObjectHideFlags: 1

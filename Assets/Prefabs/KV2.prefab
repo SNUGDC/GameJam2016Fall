@@ -116,9 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b17d94f2577eea469de9ca430178e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
   maxSpeed: 10
   force: 8
-  key: 13
+  key: 259
 --- !u!114 &114000012314892434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPos: {fileID: 1000011784677238}
   bullet: {fileID: 1000013443469360, guid: 2370af0dd87df0a4e8c91540bb6bca6a, type: 2}
+  shootNum: 1
+  curShootNum: 0
+  shootInterval: 0.05
   shootTimer: 0.2
   timer: 0
   keyCode: 13
