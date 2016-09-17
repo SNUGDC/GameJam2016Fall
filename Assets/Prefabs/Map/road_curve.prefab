@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000012273717422}
   - 212: {fileID: 212000013534270410}
   - 60: {fileID: 60000012559314158}
+  - 114: {fileID: 114000012401393584}
   m_Layer: 0
   m_Name: road_curve
   m_TagString: Untagged
@@ -77,6 +78,17 @@ PolygonCollider2D:
       - {x: 0, y: 0}
       - {x: 0, y: 5.7599998}
       - {x: -0.42, y: 5.8799996}
+--- !u!114 &114000012401393584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012555193956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daf8e1a940fc46c39dc3bca1dd18917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000013534270410
 SpriteRenderer:
   m_ObjectHideFlags: 1
