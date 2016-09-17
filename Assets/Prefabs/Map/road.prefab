@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000013135004544}
   - 212: {fileID: 212000013013461768}
   - 61: {fileID: 61000010132940826}
+  - 114: {fileID: 114000012389017090}
   m_Layer: 0
   m_Name: road
   m_TagString: Untagged
@@ -34,8 +35,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011655372316}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -55,6 +56,17 @@ BoxCollider2D:
   m_Offset: {x: -3, y: 3}
   serializedVersion: 2
   m_Size: {x: 6, y: 6}
+--- !u!114 &114000012389017090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011655372316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daf8e1a940fc46c39dc3bca1dd18917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000013013461768
 SpriteRenderer:
   m_ObjectHideFlags: 1

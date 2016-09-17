@@ -88,7 +88,7 @@ ParticleSystem:
   randomSeed: 63433504
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   moveWithTransform: 0
   scalingMode: 1
   InitialModule:

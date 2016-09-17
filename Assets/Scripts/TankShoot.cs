@@ -57,7 +57,8 @@ public class TankShoot : MonoBehaviour {
                 {
                     Bullet.transform.rotation = shootPos.transform.rotation;
                     // transform.up is green axis
-                    Bullet.GetComponent<Rigidbody2D>().velocity = ((Vector2)shootPos.transform.up +  new Vector2(Random.Range(-10, 10), Random.Range(-10, 10))) * bulletSpeed;
+                    
+                    Bullet.GetComponent<Rigidbody2D>().velocity = shootPos.transform.up +  new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f), 0) * bulletSpeed;
                     //yield return StartCoroutine(shootIntervalTimer());
                 }
                 else

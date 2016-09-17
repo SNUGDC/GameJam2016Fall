@@ -1324,6 +1324,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4000010689636726, guid: ce5439ffdbc78af42983eb2f271eaf78, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.79999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010689636726, guid: ce5439ffdbc78af42983eb2f271eaf78, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.79999924
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce5439ffdbc78af42983eb2f271eaf78, type: 2}
   m_IsPrefabParent: 0
@@ -2555,7 +2563,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013841412912, guid: 03e220ecf457375499f2c2c214887621, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.97
+      value: 18.3
       objectReference: {fileID: 0}
     - target: {fileID: 4000013841412912, guid: 03e220ecf457375499f2c2c214887621, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2587,7 +2595,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013811023786, guid: 03e220ecf457375499f2c2c214887621, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.4000001
+      value: -0.39999962
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03e220ecf457375499f2c2c214887621, type: 2}
@@ -4655,6 +4663,8 @@ GameObject:
   - 124: {fileID: 2121198478}
   - 81: {fileID: 2121198477}
   - 82: {fileID: 2121198482}
+  - 114: {fileID: 2121198483}
+  - 114: {fileID: 2121198484}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4804,6 +4814,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &2121198483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2121198476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05dc992bf48dc4b0981ae11c4bf8c5a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpSpeed: 2
+--- !u!114 &2121198484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2121198476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a743175fdd4ac475692bc99abf19800e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpSpeed: 40
 --- !u!1001 &2130391675
 Prefab:
   m_ObjectHideFlags: 0
