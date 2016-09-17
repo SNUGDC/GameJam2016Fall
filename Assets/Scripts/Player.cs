@@ -21,18 +21,17 @@ public class Player {
         this.key = key;
     }
 
-    /*
+    
     // Variables preserved only under a single level scope.
     public Tank tank; // Better than holding a GameObject IMO
     public int lap;
     public List<Checkpoint> passedCheckpoints;
 
-    public void init() {
+    public void init(Tank tank) {
         // Initialize variables that are used under a single level scope
-        //TODO: this.tank = tank;
+        this.tank = tank;
+        tank.key = key;
         lap = 0;
         passedCheckpoints = new List<Checkpoint>();
     }
-
-    */
 }
