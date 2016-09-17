@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-public class TrainScript : MonoBehaviour
+public class Tank : MonoBehaviour
 {
     private Transform transform;
     private Rigidbody2D rigidbody;

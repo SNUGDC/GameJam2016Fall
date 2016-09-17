@@ -23,7 +23,7 @@ public class Player {
 
     /*
     // Variables preserved only under a single level scope.
-    public TrainScript tank; // Better than holding a GameObject IMO
+    public Tank tank; // Better than holding a GameObject IMO
     public int lap;
     public List<Checkpoint> passedCheckpoints;
 
