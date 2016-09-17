@@ -19,6 +19,7 @@ public class CannonBullet : MonoBehaviour {
         if (col.rigidbody != null)
         {
             col.rigidbody.angularDrag = Random.Range(-5, 5);
+            Destroy(gameObject);
         }
         
     }
