@@ -26,6 +26,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000012360862926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012721754456}
+  - 212: {fileID: 212000011647071580}
+  - 114: {fileID: 114000012636128410}
+  m_Layer: 0
+  m_Name: shadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013276870646
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,6 +64,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4000012721754456
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012360862926}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3000002, y: -0.29999924, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013899218452}
+  m_RootOrder: 1
 --- !u!4 &4000012923357598
 Transform:
   m_ObjectHideFlags: 1
@@ -54,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010908225218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 1.8, z: 0}
+  m_LocalPosition: {x: -0.3, y: 2.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -67,11 +97,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013276870646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5480027, y: -4.97, z: 0}
+  m_LocalPosition: {x: 10.5, y: 28.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012923357598}
+  - {fileID: 4000012721754456}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &50000013216506930
@@ -119,7 +150,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   maxSpeed: 10
   force: 12
-  key: 258
+  key: 97
 --- !u!114 &114000011839038622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,13 +164,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPos: {fileID: 1000010908225218}
   bullet: {fileID: 1000013627765478, guid: e775ebaa9a5e80f4a933ceb0fd40bb5e, type: 2}
-  shootNum: 5
+  shootNum: 1
   curShootNum: 0
   shootInterval: 0.05
   shootTimer: 0.2
   timer: 0
-  keyCode: 98
-  bulletSpeed: 20
+  keyCode: 9
+  bulletSpeed: 50
+--- !u!114 &114000012636128410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012360862926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754684f5f7f9246d2b002634ee653e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovingObject: 1
+  shadowDistance: 0.3
 --- !u!114 &114000013875895036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,6 +195,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b2ab57cc4fba04399f777626cfca5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &212000011647071580
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012360862926}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b6a7972b5fc33436babcd2eaf5898083, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 1
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 903aca4dd7343bc42ab99da0250d351b, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.416}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!212 &212000014241655266
 SpriteRenderer:
   m_ObjectHideFlags: 1
