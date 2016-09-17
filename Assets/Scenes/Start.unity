@@ -501,7 +501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1032d831810b584a9bb0bbb8b533a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReadyToGetKey: 0
   NoKeyCode1: {fileID: 763480098}
   NoKeyCode2: {fileID: 1544198731}
   NoKeyCode3: {fileID: 6126185}
@@ -510,6 +509,7 @@ MonoBehaviour:
   Player2Key: {fileID: 513334300}
   Player3Key: {fileID: 1642489763}
   Player4Key: {fileID: 826067912}
+  InfoText: {fileID: 1493929572}
 --- !u!1 &1309016841
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ GameObject:
   - 222: {fileID: 1493929573}
   - 114: {fileID: 1493929572}
   m_Layer: 5
-  m_Name: Text
+  m_Name: InfoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

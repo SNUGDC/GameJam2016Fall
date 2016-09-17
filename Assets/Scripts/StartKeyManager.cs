@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartKeyManager : MonoBehaviour
 {
@@ -12,13 +13,16 @@ public class StartKeyManager : MonoBehaviour
 	public Text Player2Key;
 	public Text Player3Key;
 	public Text Player4Key;
+	public Text InfoText;
 
 	private int WhichPlayer;
+	private float DelayTime;
 
 	void Start()
 	{
 		PlayerPrefs.DeleteAll();
 		WhichPlayer = 1;
+		DelayTime = 0;
 
 		Player1Key.text = "";
 		Player2Key.text = "";
@@ -29,6 +33,7 @@ public class StartKeyManager : MonoBehaviour
 	void Update()
 	{
 		GetControlKey ();
+		WaitNextPlayer ();
 	}
 
 	KeyCode GetControlKey()
@@ -55,12 +60,16 @@ public class StartKeyManager : MonoBehaviour
 		case 1:
 			PlayerPrefs.SetInt ("Player1", i);
 			WhichPlayer = WhichPlayer + 1;
+			InfoText.text = "Press Player 2's Control Button";
+			DelayTime = 0;
 			break;
 		case 2:
 			if (PlayerPrefs.GetInt ("Player1") == i)
 				break;
 			PlayerPrefs.SetInt ("Player2", i);
 			WhichPlayer = WhichPlayer + 1;
+			InfoText.text = "Press Player 3's Control Button";
+			DelayTime = 0;
 			break;
 		case 3:
 			if (PlayerPrefs.GetInt ("Player1") == i)
@@ -69,6 +78,8 @@ public class StartKeyManager : MonoBehaviour
 				break;
 			PlayerPrefs.SetInt ("Player3", i);
 			WhichPlayer = WhichPlayer + 1;
+			InfoText.text = "Press Player 4's Control Button";
+			DelayTime = 0;
 			break;
 		case 4:
 			if (PlayerPrefs.GetInt ("Player1") == i)
@@ -79,6 +90,8 @@ public class StartKeyManager : MonoBehaviour
 				break;
 			PlayerPrefs.SetInt ("Player4", i);
 			WhichPlayer = WhichPlayer + 1;
+			InfoText.text = "Wait For Few Seconds";
+			DelayTime = 2;
 			break;
 		default:
 			break;
@@ -114,6 +127,19 @@ public class StartKeyManager : MonoBehaviour
 
 			Player4Key.text = ((KeyCode)Key).ToString();
 			NoKeyCode4.SetActive (false);
+		}
+	}
+
+	void WaitNextPlayer()
+	{
+		if (WhichPlayer > 2)
+		{
+			DelayTime += Time.deltaTime;
+
+			if (DelayTime > 5f)
+			{
+				SceneManager.LoadScene ("Select");
+			}
 		}
 	}
 }
