@@ -38,6 +38,7 @@ GameObject:
   - 50: {fileID: 50000014224261078}
   - 114: {fileID: 114000011810117714}
   - 58: {fileID: 58000012190338818}
+  - 114: {fileID: 114000012090804610}
   m_Layer: 10
   m_Name: MagnetBullet
   m_TagString: Untagged
@@ -112,6 +113,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1c8947b28fa8cb4ea8cbfe416f3a59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000012090804610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013325589008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30cc96e7acaf0aa45a4ebd5e74cde4d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212000012559112450
