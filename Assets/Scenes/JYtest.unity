@@ -102,6 +102,7 @@ GameObject:
   - 92: {fileID: 1187600692}
   - 124: {fileID: 1187600691}
   - 81: {fileID: 1187600690}
+  - 114: {fileID: 1187600695}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -171,12 +172,29 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1187600689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1187600695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187600689}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a7dfe154ca0e245afecb44dc789e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1525251546}
+--- !u!1 &1525251546 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013357002390, guid: 4d3ea4245146e884da0bd989e6654f30,
+    type: 2}
+  m_PrefabInternal: {fileID: 1689679777}
 --- !u!1001 &1689679777
 Prefab:
   m_ObjectHideFlags: 0
@@ -216,6 +234,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013411010788, guid: 4d3ea4245146e884da0bd989e6654f30,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1000013443469360, guid: 2370af0dd87df0a4e8c91540bb6bca6a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d3ea4245146e884da0bd989e6654f30, type: 2}
   m_IsPrefabParent: 0
