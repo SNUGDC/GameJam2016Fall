@@ -233,6 +233,14 @@ public class StartGame : MonoBehaviour
         else if (5 - DelayTime > 0f)
             CountDown.GetComponent<Text>().text = "1";
         else
+        {
             CountDown.GetComponent<Text>().text = "0";
+
+            for (int i = 1; i < WhichPlayer; i++)
+            {
+                new Player((KeyCode)Key[i - 1], (TankEnum)(WhichTank[i - 1] % 5));
+                Debug.Log(i);
+            }
+        }
     }
 }
