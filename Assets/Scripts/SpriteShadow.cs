@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 // [ExecuteInEditMode]
 public class SpriteShadow : MonoBehaviour {
 	public bool isMovingObject = false;
+	public float shadowDistance = 1f;
 	void OnDrawGizmos()
 	{
 		MoveShadowToPosition();
@@ -17,6 +17,6 @@ public class SpriteShadow : MonoBehaviour {
 	}
 	void MoveShadowToPosition()
 	{
-		transform.position = transform.parent.position + new Vector3(-1,-1,1);
+		transform.position = transform.parent.position + new Vector3(-shadowDistance,-shadowDistance,1);
 	}
 }

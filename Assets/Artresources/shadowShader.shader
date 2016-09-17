@@ -87,7 +87,6 @@
 				c.rgb *= c.a;
 				fixed a = SampleSpriteTexture (IN.texcoord).a;
 				if (a < 0.5) discard;
-				c.a *= a;
 				return c;
 			}
 		ENDCG
