@@ -17,7 +17,7 @@ public class TankColorSwap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             Debug.Log("ColorChange");
-            sp.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+            // sp.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
         }
 
     }
