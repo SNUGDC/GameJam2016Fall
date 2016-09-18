@@ -53,6 +53,7 @@ public class StartGame : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Application.Quit();
             Debug.Log("Game 끔");
         }
         else
