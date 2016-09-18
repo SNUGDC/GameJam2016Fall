@@ -9,6 +9,7 @@ public class StartGame : MonoBehaviour
     public Text[] PlayerKey;
 
     public GameObject Title;
+    public GameObject Credits;
     public GameObject Lobby;
     public GameObject[] Players;
     public GameObject CountDown;
@@ -49,7 +50,9 @@ public class StartGame : MonoBehaviour
 	{
         if (Input.GetKeyDown(KeyCode.F1))
         {
+            Credits.SetActive(true);
             Debug.Log("Credit");
+            //CreditShow();
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -262,5 +265,16 @@ public class StartGame : MonoBehaviour
 
             SceneManager.LoadScene("Main");
         }
+    }
+
+    void CreditShow()
+    {
+       
+        if (Input.anyKey)
+        {
+            Credits.SetActive(false);
+        }
+        
+        
     }
 }
