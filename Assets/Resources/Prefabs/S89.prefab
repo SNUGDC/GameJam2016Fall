@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013656042328}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4000001, y: -0.4000001, z: 1}
+  m_LocalPosition: {x: -0.6000004, y: -0.6000004, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -144,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010934185522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5480027, y: -4.97, z: 0}
+  m_LocalPosition: {x: 26.801992, y: 23.261673, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -215,6 +215,7 @@ MonoBehaviour:
   dustEffect:
   - {fileID: 198000010004926274}
   - {fileID: 198000011701542576}
+  width: 2
   key: 97
 --- !u!114 &114000012202951352
 MonoBehaviour:
@@ -261,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMovingObject: 1
-  shadowDistance: 0.4
+  shadowDistance: 0.6
 --- !u!198 &198000010004926274
 ParticleSystem:
   m_ObjectHideFlags: 1

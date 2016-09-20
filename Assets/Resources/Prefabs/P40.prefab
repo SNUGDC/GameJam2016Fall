@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011931686886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 30.611233, y: 25.06048, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -148,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012879061706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: -0.6, z: 1}
+  m_LocalPosition: {x: -0.79999924, y: -0.79999924, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -209,8 +209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754684f5f7f9246d2b002634ee653e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMovingObject: 0
-  shadowDistance: 0.6
+  isMovingObject: 1
+  shadowDistance: 0.8
 --- !u!114 &114000011895069054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,6 +261,7 @@ MonoBehaviour:
   dustEffect:
   - {fileID: 198000011603000760}
   - {fileID: 198000010994281036}
+  width: 2
   key: 261
 --- !u!198 &198000010994281036
 ParticleSystem:
